@@ -1,0 +1,4 @@
+C:\Users\christian.bravo\source\repos\SurveyWebService\Survey.WebService.Services\obj\Debug\netcoreapp3.1\Survey.Services.csproj.AssemblyReference.cache
+C:\Users\christian.bravo\source\repos\SurveyWebService\Survey.WebService.Services\obj\Debug\netcoreapp3.1\Survey.Services.AssemblyInfoInputs.cache
+C:\Users\christian.bravo\source\repos\SurveyWebService\Survey.WebService.Services\obj\Debug\netcoreapp3.1\Survey.Services.AssemblyInfo.cs
+C:\Users\christian.bravo\source\repos\SurveyWebService\Survey.WebService.Services\obj\Debug\netcoreapp3.1\Survey.Services.csproj.CoreCompileInputs.cache

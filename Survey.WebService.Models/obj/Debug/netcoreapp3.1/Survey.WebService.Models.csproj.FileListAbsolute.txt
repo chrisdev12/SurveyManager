@@ -1,0 +1,8 @@
+C:\Users\christian.bravo\source\repos\SurveyWebService\Survey.WebService.Models\bin\Debug\netcoreapp3.1\Survey.WebService.Models.deps.json
+C:\Users\christian.bravo\source\repos\SurveyWebService\Survey.WebService.Models\bin\Debug\netcoreapp3.1\Survey.WebService.Models.dll
+C:\Users\christian.bravo\source\repos\SurveyWebService\Survey.WebService.Models\bin\Debug\netcoreapp3.1\Survey.WebService.Models.pdb
+C:\Users\christian.bravo\source\repos\SurveyWebService\Survey.WebService.Models\obj\Debug\netcoreapp3.1\Survey.WebService.Models.AssemblyInfoInputs.cache
+C:\Users\christian.bravo\source\repos\SurveyWebService\Survey.WebService.Models\obj\Debug\netcoreapp3.1\Survey.WebService.Models.AssemblyInfo.cs
+C:\Users\christian.bravo\source\repos\SurveyWebService\Survey.WebService.Models\obj\Debug\netcoreapp3.1\Survey.WebService.Models.csproj.CoreCompileInputs.cache
+C:\Users\christian.bravo\source\repos\SurveyWebService\Survey.WebService.Models\obj\Debug\netcoreapp3.1\Survey.WebService.Models.dll
+C:\Users\christian.bravo\source\repos\SurveyWebService\Survey.WebService.Models\obj\Debug\netcoreapp3.1\Survey.WebService.Models.pdb
