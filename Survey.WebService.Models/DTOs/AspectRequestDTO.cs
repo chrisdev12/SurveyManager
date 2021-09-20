@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Survey.WebService.Models.Aspect
+namespace Survey.WebService.Models.DTO
 {
     public class AspectRequestDTO
     {

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Survey.WebService.DataAccess.DbContexts.Survey;
+using Survey.WebService.Models;
 using Survey.WebService.Repository;
 
 namespace Microsoft.Extensions.DependencyInjecton
@@ -9,8 +10,11 @@ namespace Microsoft.Extensions.DependencyInjecton
     {
         public static IServiceCollection AddDataServices(this IServiceCollection services)
         {
-            services.AddScoped<ISurveyContext, SurveyContext>();
-            services.AddScoped<IAspectRepository, AspectRepository>();
+            services
+                .AddScoped<ISurveyContext, SurveyContext>()
+                .AddScoped<IRepository<SurveyModel>, SurveyRepository>()
+                .AddScoped<IRepository<QuestionModel>, QuestionRepository>();
+
 
             return services;
         }

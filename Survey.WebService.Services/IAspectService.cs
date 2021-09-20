@@ -1,7 +1,11 @@
-﻿namespace Survey.WebService.Services
+﻿using Survey.WebService.Models.DTO;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
+namespace Survey.WebService.Services
 {
     public interface IAspectService
     {
-        public string GetAll();
+        public Task<List<AspectRequestDTO>> VerifySurveyExistence(AspectRequestDTO aspectRequest);
     }
 }

@@ -5,9 +5,9 @@ namespace Survey.WebService.Repository
 {
     public interface IRepository<TEntity> where TEntity: class
     {
-        Task<TEntity> GetById(TEntity id);
+        Task<TEntity> Get(string id = null);
 
-        Task<IEnumerable<TEntity>> GetAll();
+        Task<List<TEntity>> GetAll(string id = null);
 
         Task<TEntity> Update(TEntity id);
 

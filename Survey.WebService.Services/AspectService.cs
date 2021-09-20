@@ -1,17 +1,29 @@
-﻿using Survey.WebService.Repository;
+﻿using Survey.WebService.Models;
+using Survey.WebService.Models.DTO;
+using Survey.WebService.Repository;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Survey.WebService.Services
 {
     public class AspectService : IAspectService
     {
-        private readonly IAspectRepository _aspectRepository;
-        public AspectService(IAspectRepository aspectRepository)
+        private readonly IRepository<SurveyModel> _surveyRepository;
+        private readonly IRepository<QuestionModel> _questionRepository;
+        public AspectService(IRepository<SurveyModel> surveyRepository, IRepository<QuestionModel> questionRepository)
         {
-            this._aspectRepository = aspectRepository;
+            _surveyRepository = surveyRepository;
+            _questionRepository = questionRepository;
         }
-        public string GetAll()
+        public async Task<List<AspectRequestDTO>> VerifySurveyExistence(AspectRequestDTO aspectRequest)
         {
-            return "working service";
+            // Business flow: 
+            // Verify if survey is equal or not
+            // Verify if question are equal or not
+            // Answer pending.
+            var survey = await _surveyRepository.Get();
+            var questions = await _questionRepository.GetAll();
+            return new List<AspectRequestDTO>();
         }
     }
 }

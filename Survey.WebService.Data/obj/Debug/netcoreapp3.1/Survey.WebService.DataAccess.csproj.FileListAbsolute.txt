@@ -6,3 +6,4 @@ C:\Users\christian.bravo\source\repos\SurveyWebService\Survey.WebService.Data\ob
 C:\Users\christian.bravo\source\repos\SurveyWebService\Survey.WebService.Data\obj\Debug\netcoreapp3.1\Survey.WebService.DataAccess.csproj.CoreCompileInputs.cache
 C:\Users\christian.bravo\source\repos\SurveyWebService\Survey.WebService.Data\obj\Debug\netcoreapp3.1\Survey.WebService.DataAccess.dll
 C:\Users\christian.bravo\source\repos\SurveyWebService\Survey.WebService.Data\obj\Debug\netcoreapp3.1\Survey.WebService.DataAccess.pdb
+C:\Users\christian.bravo\source\repos\SurveyWebService\Survey.WebService.Data\obj\Debug\netcoreapp3.1\Survey.WebService.DataAccess.csproj.AssemblyReference.cache
