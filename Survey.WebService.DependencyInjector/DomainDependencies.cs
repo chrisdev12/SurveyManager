@@ -7,7 +7,7 @@ namespace Microsoft.Extensions.DependencyInjecton
     {
         public static IServiceCollection AddDomainServices(this IServiceCollection services)
         {
-            services.AddScoped<IAspectService, AspectService>();
+            services.AddScoped<IGeneralSurveyService, GeneralSurveyService>();
 
             return services;
         }

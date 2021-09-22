@@ -8,9 +8,10 @@ namespace Survey.WebService.DataAccess.DbContexts.Survey
     public class SurveyContext :  ISurveyContext
     {
         private readonly string _connectionString;
+        private readonly string _connectionName = "SurveyDefaultConnection";
         public SurveyContext(IConfiguration config)
         {
-            _connectionString = config.GetConnectionString("K8Survey");
+            _connectionString = config.GetConnectionString(_connectionName);
         }
 
         IDbConnection IDbContext<IDbConnection>.CreateConnection()
