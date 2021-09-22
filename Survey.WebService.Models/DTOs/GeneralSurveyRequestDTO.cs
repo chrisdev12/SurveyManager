@@ -5,8 +5,8 @@ namespace Survey.WebService.Models.DTOs
     public class GeneralSurveyRequestDTO
     {
         public SurveyModel Survey { get; set; }
-        public IEnumerable<QuestionModel> Questions { get; set; }
-        public IEnumerable<AnswerModel> Answers { get; set; }
+        public List<QuestionModel> Questions { get; set; }
+        public List<AnswerModel> Answers { get; set; }
         public MemberModel MemberInfo { get; set; }
     }
 }

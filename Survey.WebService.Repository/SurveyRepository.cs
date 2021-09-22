@@ -2,6 +2,8 @@
 using Survey.WebService.DataAccess.DbContexts.Survey;
 using Survey.WebService.Models;
 using System.Collections.Generic;
+using System.Data;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Survey.WebService.Repository
@@ -9,16 +11,23 @@ namespace Survey.WebService.Repository
     public class SurveyRepository : IRepository<SurveyModel>
     {
         private readonly ISurveyContext _dbContext;
+        private readonly string getSurveySP = "sp_WS_GetSurveyById";
+        private readonly string updateSurveySP = "sp_WS_UpdateSurveyById";
+        private readonly string insertSurveySP = "sp_WS_InsertSurvey";
         public SurveyRepository(ISurveyContext dbContext)
         {
             _dbContext = dbContext;
         }
         public async Task<SurveyModel> Get(string id)
         {
+            var parameters = new
+            {
+                SurveyId = id
+            };
             using var connection = _dbContext.CreateConnection();
-            SurveyModel surveyFound = await connection.QuerySingleAsync<SurveyModel>("SELECT * FROM Survey WHERE SurveyId = '432423';");
+            var surveyFound = await connection.QueryAsync<SurveyModel>(getSurveySP, parameters, commandType: CommandType.StoredProcedure);
 
-            return surveyFound;
+            return surveyFound.ToList().FirstOrDefault(); ;
         }
 
         public Task<List<SurveyModel>> GetAll(string id = null)
@@ -26,14 +35,31 @@ namespace Survey.WebService.Repository
             throw new System.NotImplementedException();
         }
 
-        public Task<SurveyModel> Insert(SurveyModel register)
+        public async Task<SurveyModel> Insert(SurveyModel survey)
         {
-            throw new System.NotImplementedException();
+            var parameters = new
+            {
+                SurveyId = survey.Id,
+                Description = survey.Description
+            };
+            using var connection = _dbContext.CreateConnection();
+            await connection.ExecuteAsync(insertSurveySP, parameters, commandType: CommandType.StoredProcedure);
+
+            return survey;
         }
 
-        public Task<SurveyModel> Update(SurveyModel id)
+        public async Task<SurveyModel> Update(SurveyModel survey)
         {
-            throw new System.NotImplementedException();
+            var parameters = new
+            {
+                SurveyId = survey.Id,
+                Description = survey.Description
+            };
+
+            using var connection = _dbContext.CreateConnection();
+            await connection.ExecuteAsync(updateSurveySP, parameters, commandType: CommandType.StoredProcedure);
+
+            return survey;
         }
     }
 }

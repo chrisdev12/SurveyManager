@@ -3,6 +3,7 @@ using Survey.WebService.DataAccess.DbContexts.Survey;
 using Survey.WebService.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -11,6 +12,9 @@ namespace Survey.WebService.Repository
     public class QuestionRepository : IRepository<QuestionModel>
     {
         private readonly ISurveyContext _dbContext;
+        private readonly string getSurveyQuestions = "sp_WS_GetSurveyQuestions";
+        private readonly string updateSurveyQuestion = "sp_WS_UpdateQuestion";
+        private readonly string insertSurveyQuestion = "sp_WS_InsertQuestion";
         public QuestionRepository(ISurveyContext dbContext)
         {
             _dbContext = dbContext;
@@ -20,23 +24,45 @@ namespace Survey.WebService.Repository
             throw new NotImplementedException();
         }
 
-        public async Task<List<QuestionModel>> GetAll(string id = null)
+        public async Task<List<QuestionModel>> GetAll(string id)
         {
-            var query = $"SELECT MS.QuestionId, MS.Description FROM Survey S INNER JOIN QuestionSurvey MS ON MS.SurveyId = S.SurveyId WHERE MS.SurveyId = '432423';";
+            var parameters = new
+            {
+                SurveyId = id
+            };
             using var connection = _dbContext.CreateConnection();
-            var questionsFound = await connection.QueryAsync<QuestionModel>(query);
+            var questionsFound = await connection.QueryAsync<QuestionModel>(getSurveyQuestions, parameters, commandType: CommandType.StoredProcedure);
 
             return questionsFound.ToList();
         }
 
-        public Task<QuestionModel> Insert(QuestionModel register)
+        public async Task<QuestionModel> Insert(QuestionModel question)
         {
-            throw new NotImplementedException();
+            var parameters = new
+            {
+                QuestionId = question.Id,
+                SurveyId = question.SurveyId,
+                Description = question.Description
+            };
+            using var connection = _dbContext.CreateConnection();
+            await connection.ExecuteAsync(insertSurveyQuestion, parameters, commandType: CommandType.StoredProcedure);
+
+            return question;
         }
 
-        public Task<QuestionModel> Update(QuestionModel id)
+        public async Task<QuestionModel> Update(QuestionModel question)
         {
-            throw new NotImplementedException();
+            var parameters = new
+            {
+                QuestionId = question.Id,
+                SurveyId = question.SurveyId,
+                Description = question.Description
+            };
+
+            using var connection = _dbContext.CreateConnection();
+            await connection.ExecuteAsync(updateSurveyQuestion, parameters, commandType: CommandType.StoredProcedure);
+
+            return question;
         }
     }
 }
