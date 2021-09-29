@@ -11,9 +11,9 @@ namespace Survey.WebService.Repository
     public class SurveyRepository : IRepository<SurveyModel>
     {
         private readonly ISurveyContext _dbContext;
-        private readonly string getSurveySP = "sp_WS_GetSurveyById";
-        private readonly string updateSurveySP = "sp_WS_UpdateSurveyById";
-        private readonly string insertSurveySP = "sp_WS_InsertSurvey";
+        private readonly string getSurveySP = "ws.sp_WS_GetSurveyById";
+        private readonly string updateSurveySP = "ws.sp_WS_UpdateSurveyById";
+        private readonly string insertSurveySP = "ws.sp_WS_InsertSurvey";
         public SurveyRepository(ISurveyContext dbContext)
         {
             _dbContext = dbContext;

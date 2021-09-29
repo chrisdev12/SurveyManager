@@ -9,7 +9,7 @@ namespace Survey.WebService.Repository
     public class MemberRepository : IMemberRepository
     {
         private readonly ISurveyContext _dbContext;
-        private readonly string insertMemberSurveyResult = "sp_WS_InsertMemberSurveyResult";
+        private readonly string insertMemberSurveyResult = "ws.sp_WS_InsertMemberSurveyResult";
         public MemberRepository(ISurveyContext dbContext)
         {
             _dbContext = dbContext;

@@ -1,0 +1,123 @@
+{
+	"info": {
+		"_postman_id": "ce4dc94e-7c45-4b83-a206-ad5b3246e47b",
+		"name": "WS - Survey (Aspect)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "local",
+			"item": [
+				{
+					"name": "Health checkpoint",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44366/healthcheckpoint",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44366",
+							"path": [
+								"healthcheckpoint"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Aspect survey",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"survey\" : {\r\n        \"id\": \"StarsBlast\",\r\n        \"description\": \"Stars Medicare Survey was updated\"\r\n    },\r\n    \"questions\": [\r\n        {\r\n            \"id\": \"1\",\r\n            \"description\": \"In the last 6 months, how often did you make an appointment with your primary care physician as soon as you needed one?\"    \r\n        },\r\n        {\r\n            \"id\": \"2\",\r\n            \"description\": \"In the last 6 months, how often did you wait 15 minutes or less for the doctor to see you?\"    \r\n        },\r\n        {\r\n            \"id\": \"3\",\r\n            \"description\": \"In the last 6 months, how often did you receive assistance from the doctor’s office staff to coordinate appointments with other providers and medical services if needed?\"    \r\n        },\r\n          {\r\n            \"id\": \"4\",\r\n            \"description\": \"In the last 6 months, how often was it easy for you to get the medical care, tests or treatment you needed?\"    \r\n        },\r\n        {\r\n            \"id\": \"5\",\r\n            \"description\": \"In the last 6 months, when you needed immediate attention, how often were you seen as soon as you needed it?\"    \r\n        },\r\n        {\r\n            \"id\": \"6\",\r\n            \"description\": \"In the last 6 months, how often did your primary care physician seem to be informed and aware of the care you received from specialists?\"    \r\n        },\r\n        {\r\n            \"id\": \"7\",\r\n            \"description\": \"What number would you use to rate your primary physician? Mark a digit from 0 to 9 where 0 is the worst possible primary physician and 9 is the best possible primary physician.\"    \r\n        },\r\n        {\r\n            \"id\": \"8\",\r\n            \"description\": \"Want to keep receiving this calls?\"    \r\n        }\r\n    ],\r\n    \"answers\": [\r\n        {\r\n            \"answerId\": \"1\",\r\n            \"phoneDigit\":\"4\",\r\n            \"description\": \"never\"\r\n        },\r\n        {\r\n            \"answerId\": \"2\",\r\n            \"phoneDigit\":\"4\",\r\n            \"description\": \"never\"\r\n        },\r\n             {\r\n            \"answerId\": \"3\",\r\n            \"phoneDigit\":\"2\",\r\n            \"description\": \"most of the time\"\r\n        },\r\n        {\r\n            \"answerId\": \"4\",\r\n            \"phoneDigit\":\"1\",\r\n            \"description\": \"always\"\r\n        },\r\n               {\r\n            \"answerId\": \"5\",\r\n            \"phoneDigit\":\"4\",\r\n            \"description\": \"never\"\r\n        },\r\n        {\r\n            \"answerId\": \"6\",\r\n            \"phoneDigit\":\"2\",\r\n            \"description\": \"most of the time\"\r\n        },\r\n             {\r\n            \"answerId\": \"7\",\r\n            \"phoneDigit\":\"9\",\r\n            \"description\": \"9\"\r\n        },\r\n        {\r\n            \"answerId\": \"8\",\r\n            \"phoneDigit\":\"1\",\r\n            \"description\": \"yes\"\r\n        }\r\n    ],\r\n    \"memberInfo\": {\r\n        \"memberNumber\":\"123456789\",\r\n        \"memberName\":\"Jessica Rodriguez\",\r\n        \"phoneNumber\":\"7872326831\",\r\n        \"phoneNumber1\":\"\",\r\n        \"providerName\":\"VELAZQUEZ LOZADA IDIA L\",\r\n        \"providerNPI\":\"1376570499\",\r\n        \"IPA\":\"968\",\r\n        \"language\":\"ENG\",\r\n        \"calldate\":\"2021-09-21 15:01:37\",\r\n        \"disposition\":\"CCSC\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44366/v1/generalSurvey/register",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44366",
+							"path": [
+								"v1",
+								"generalSurvey",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "UAT",
+			"item": [
+				{
+					"name": "Health checkpoint",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://devpha01.mcs.com.pr/SurveyApi/healthcheckpoint",
+							"protocol": "https",
+							"host": [
+								"devpha01",
+								"mcs",
+								"com",
+								"pr"
+							],
+							"path": [
+								"SurveyApi",
+								"healthcheckpoint"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Aspect survey",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"survey\" : {\r\n        \"id\": \"StarsBlast\",\r\n        \"description\": \"Stars Medicare Survey\"\r\n    },\r\n    \"questions\": [\r\n        {\r\n            \"id\": \"1\",\r\n            \"description\": \"In the last 6 months, how often did you make an appointment with your primary care physician as soon as you needed one?\"    \r\n        },\r\n        {\r\n            \"id\": \"2\",\r\n            \"description\": \"In the last 6 months, how often did you wait 15 minutes or less for the doctor to see you?\"    \r\n        },\r\n        {\r\n            \"id\": \"3\",\r\n            \"description\": \"In the last 6 months, how often did you receive assistance from the doctor’s office staff to coordinate appointments with other providers and medical services if needed?\"    \r\n        },\r\n          {\r\n            \"id\": \"4\",\r\n            \"description\": \"In the last 6 months, how often was it easy for you to get the medical care, tests or treatment you needed?\"    \r\n        },\r\n        {\r\n            \"id\": \"5\",\r\n            \"description\": \"In the last 6 months, when you needed immediate attention, how often were you seen as soon as you needed it?\"    \r\n        },\r\n        {\r\n            \"id\": \"6\",\r\n            \"description\": \"In the last 6 months, how often did your primary care physician seem to be informed and aware of the care you received from specialists?\"    \r\n        },\r\n        {\r\n            \"id\": \"7\",\r\n            \"description\": \"What number would you use to rate your primary physician? Mark a digit from 0 to 9 where 0 is the worst possible primary physician and 9 is the best possible primary physician.\"    \r\n        },\r\n        {\r\n            \"id\": \"8\",\r\n            \"description\": \"Want to keep receiving this calls?\"    \r\n        }\r\n    ],\r\n    \"answers\": [\r\n        {\r\n            \"answerId\": \"1\",\r\n            \"phoneDigit\":\"4\",\r\n            \"description\": \"never\"\r\n        },\r\n        {\r\n            \"answerId\": \"2\",\r\n            \"phoneDigit\":\"4\",\r\n            \"description\": \"never\"\r\n        },\r\n             {\r\n            \"answerId\": \"3\",\r\n            \"phoneDigit\":\"2\",\r\n            \"description\": \"most of the time\"\r\n        },\r\n        {\r\n            \"answerId\": \"4\",\r\n            \"phoneDigit\":\"1\",\r\n            \"description\": \"always\"\r\n        },\r\n               {\r\n            \"answerId\": \"5\",\r\n            \"phoneDigit\":\"4\",\r\n            \"description\": \"never\"\r\n        },\r\n        {\r\n            \"answerId\": \"6\",\r\n            \"phoneDigit\":\"2\",\r\n            \"description\": \"most of the time\"\r\n        },\r\n             {\r\n            \"answerId\": \"7\",\r\n            \"phoneDigit\":\"9\",\r\n            \"description\": \"9\"\r\n        },\r\n        {\r\n            \"answerId\": \"8\",\r\n            \"phoneDigit\":\"1\",\r\n            \"description\": \"yes\"\r\n        }\r\n    ],\r\n    \"memberInfo\": {\r\n        \"memberNumber\":\"123456789\",\r\n        \"memberName\":\"Jessica Rodriguez\",\r\n        \"phoneNumber\":\"7872326831\",\r\n        \"phoneNumber1\":\"\",\r\n        \"providerName\":\"VELAZQUEZ LOZADA IDIA L\",\r\n        \"providerNPI\":\"1376570499\",\r\n        \"IPA\":\"968\",\r\n        \"language\":\"ENG\",\r\n        \"calldate\":\"2021-09-21 15:01:37\",\r\n        \"disposition\":\"CCSC\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://devpha01.mcs.com.pr/SurveyApi/v1/generalSurvey/register",
+							"protocol": "https",
+							"host": [
+								"devpha01",
+								"mcs",
+								"com",
+								"pr"
+							],
+							"path": [
+								"SurveyApi",
+								"v1",
+								"generalSurvey",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

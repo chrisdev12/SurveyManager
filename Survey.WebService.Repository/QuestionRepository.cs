@@ -12,9 +12,9 @@ namespace Survey.WebService.Repository
     public class QuestionRepository : IRepository<QuestionModel>
     {
         private readonly ISurveyContext _dbContext;
-        private readonly string getSurveyQuestions = "sp_WS_GetSurveyQuestions";
-        private readonly string updateSurveyQuestion = "sp_WS_UpdateQuestion";
-        private readonly string insertSurveyQuestion = "sp_WS_InsertQuestion";
+        private readonly string getSurveyQuestions = "ws.sp_WS_GetSurveyQuestions";
+        private readonly string updateSurveyQuestion = "ws.sp_WS_UpdateQuestion";
+        private readonly string insertSurveyQuestion = "ws.sp_WS_InsertQuestion";
         public QuestionRepository(ISurveyContext dbContext)
         {
             _dbContext = dbContext;

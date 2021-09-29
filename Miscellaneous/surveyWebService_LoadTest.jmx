@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.4.1">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="WS WebService loadtest" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Test users insertSurvey" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">2000</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">180</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">false</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Content-Type</stringProp>
+              <stringProp name="Header.value">application/json</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Accept-Encoding</stringProp>
+              <stringProp name="Header.value">gzip, deflate, br</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Connection</stringProp>
+              <stringProp name="Header.value">keep-alive</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP POST - RegisterRequest" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;survey&quot; : {&#xd;
+        &quot;id&quot;: &quot;StarsBlast&quot;,&#xd;
+        &quot;description&quot;: &quot;Stars Medicare Survey&quot;&#xd;
+    },&#xd;
+    &quot;questions&quot;: [&#xd;
+        {&#xd;
+            &quot;id&quot;: &quot;1&quot;,&#xd;
+            &quot;description&quot;: &quot;¿In the last 6 months, how often did you make an appointment with your primary care physician as soon as you needed one, jmeter?&quot;    &#xd;
+        },&#xd;
+        {&#xd;
+            &quot;id&quot;: &quot;2&quot;,&#xd;
+            &quot;description&quot;: &quot;In the last 6 months, how often did you wait 15 minutes or less for the doctor to see you, jmeter?&quot;    &#xd;
+        },&#xd;
+        {&#xd;
+            &quot;id&quot;: &quot;3&quot;,&#xd;
+            &quot;description&quot;: &quot;In the last 6 months, how often did you receive assistance from the doctor’s office staff to coordinate appointments with other providers and medical services if needed,jmeter&quot;    &#xd;
+        },&#xd;
+          {&#xd;
+            &quot;id&quot;: &quot;4&quot;,&#xd;
+            &quot;description&quot;: &quot;In the last 6 months, how often was it easy for you to get the medical care, tests or treatment you needed?,jmeter&quot;    &#xd;
+        },&#xd;
+        {&#xd;
+            &quot;id&quot;: &quot;5&quot;,&#xd;
+            &quot;description&quot;: &quot;¿In the last 6 months, when you needed immediate attention, how often were you seen as soon as you needed it?&quot;    &#xd;
+        },&#xd;
+        {&#xd;
+            &quot;id&quot;: &quot;6&quot;,&#xd;
+            &quot;description&quot;: &quot;In the last 6 months, how often did your primary care physician seem to be informed and aware of the care you received from specialists?&quot;    &#xd;
+        },&#xd;
+        {&#xd;
+            &quot;id&quot;: &quot;7&quot;,&#xd;
+            &quot;description&quot;: &quot;What number would you use to rate your primary physician? Mark a digit from 0 to 9 where 0 is the worst possible primary physician and 9 is the best possible primary physician.&quot;    &#xd;
+        },&#xd;
+        {&#xd;
+            &quot;id&quot;: &quot;8&quot;,&#xd;
+            &quot;description&quot;: &quot;¿Want to keep receiving this calls?,jmeter&quot;    &#xd;
+        }&#xd;
+    ],&#xd;
+    &quot;answers&quot;: [&#xd;
+        {&#xd;
+            &quot;answerId&quot;: &quot;1&quot;,&#xd;
+            &quot;phoneDigit&quot;:&quot;4&quot;,&#xd;
+            &quot;description&quot;: &quot;never&quot;&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;answerId&quot;: &quot;2&quot;,&#xd;
+            &quot;phoneDigit&quot;:&quot;4&quot;,&#xd;
+            &quot;description&quot;: &quot;never&quot;&#xd;
+        },&#xd;
+             {&#xd;
+            &quot;answerId&quot;: &quot;3&quot;,&#xd;
+            &quot;phoneDigit&quot;:&quot;2&quot;,&#xd;
+            &quot;description&quot;: &quot;most of the time&quot;&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;answerId&quot;: &quot;4&quot;,&#xd;
+            &quot;phoneDigit&quot;:&quot;1&quot;,&#xd;
+            &quot;description&quot;: &quot;always&quot;&#xd;
+        },&#xd;
+               {&#xd;
+            &quot;answerId&quot;: &quot;5&quot;,&#xd;
+            &quot;phoneDigit&quot;:&quot;4&quot;,&#xd;
+            &quot;description&quot;: &quot;never&quot;&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;answerId&quot;: &quot;6&quot;,&#xd;
+            &quot;phoneDigit&quot;:&quot;2&quot;,&#xd;
+            &quot;description&quot;: &quot;most of the time&quot;&#xd;
+        },&#xd;
+             {&#xd;
+            &quot;answerId&quot;: &quot;7&quot;,&#xd;
+            &quot;phoneDigit&quot;:&quot;9&quot;,&#xd;
+            &quot;description&quot;: &quot;jmeter changed&quot;&#xd;
+        },&#xd;
+        {&#xd;
+            &quot;answerId&quot;: &quot;8&quot;,&#xd;
+            &quot;phoneDigit&quot;:&quot;1&quot;,&#xd;
+            &quot;description&quot;: &quot;yes&quot;&#xd;
+        }&#xd;
+    ],&#xd;
+    &quot;memberInfo&quot;: {&#xd;
+        &quot;memberNumber&quot;:&quot;123456788&quot;,&#xd;
+        &quot;memberName&quot;:&quot;JMeter&quot;,&#xd;
+        &quot;phoneNumber&quot;:&quot;7872326831&quot;,&#xd;
+        &quot;phoneNumber1&quot;:&quot;&quot;,&#xd;
+        &quot;providerName&quot;:&quot;VELAZQUEZ LOZADA IDIA L&quot;,&#xd;
+        &quot;providerNPI&quot;:&quot;1376570499&quot;,&#xd;
+        &quot;IPA&quot;:&quot;968&quot;,&#xd;
+        &quot;language&quot;:&quot;ES&quot;,&#xd;
+        &quot;calldate&quot;:&quot;2021-09-21 15:01:37&quot;,&#xd;
+        &quot;disposition&quot;:&quot;CCSC&quot;&#xd;
+    }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">devpha01.mcs.com.pr</stringProp>
+          <stringProp name="HTTPSampler.port">443</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/SurveyApi/v1/generalSurvey/register</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="Register survey results" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="GraphVisualizer" testclass="ResultCollector" testname="Graph Results" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
