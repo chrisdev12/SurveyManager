@@ -4,6 +4,6 @@
     {
         public string SurveyId { get; set; }
         public string MemberNumber { get; set; }
-        public string AdditionalMessage { get; set; }
+        public object AdditionalMessage { get; set; }
     }
 }

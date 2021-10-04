@@ -1,10 +1,10 @@
-﻿using Survey.WebService.Models.DTOs;
+﻿using Survey.WebService.Models;
 using System.Threading.Tasks;
 
 namespace Survey.WebService.Services
 {
     public interface IGeneralSurveyService
     {
-        public Task<GeneralSurveyResponseDTO> BusinessRegistration(GeneralSurveyRequestDTO aspectRequest);
+        public Task<OperationStatusEnum> UpdateOrCreate(SurveyModel survey);
     }
 }

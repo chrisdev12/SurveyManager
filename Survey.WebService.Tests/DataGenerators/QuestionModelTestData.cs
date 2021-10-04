@@ -75,7 +75,7 @@ namespace Survey.WebService.Tests.UnitTest.DataGenerators
             {
                 new QuestionModel()
                 {
-                    Id = "Test Id",
+                    Id = "TestId",
                     Description = "Testing survey model",
                     SurveyId = "surveyIdEqual"
                 },

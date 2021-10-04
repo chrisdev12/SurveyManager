@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Survey.WebService.DataAccess
+﻿namespace Survey.WebService.DataAccess
 {
     public interface IDbContext<TConnection> where TConnection : class
     {

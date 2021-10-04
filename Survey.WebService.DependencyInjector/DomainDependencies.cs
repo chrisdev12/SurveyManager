@@ -8,6 +8,8 @@ namespace Microsoft.Extensions.DependencyInjecton
         public static IServiceCollection AddDomainServices(this IServiceCollection services)
         {
             services.AddScoped<IGeneralSurveyService, GeneralSurveyService>();
+            services.AddScoped<IGeneralQuestionService, GeneralQuestionService>();
+            services.AddScoped<IMemberAnswerService, MemberAnswerService>();
 
             return services;
         }
