@@ -7,20 +7,26 @@ namespace Survey.WebService.Tests.UnitTest.Models
     public class QuestionModelTest
     {
         [Theory]
-        [MemberData(nameof(QuestionModelTestData.GetEqualQuestions), MemberType = typeof(QuestionModelTestData))]
+        //Arrange
+        [MemberData(nameof(QuestionModelData.GetEqualQuestions), MemberType = typeof(QuestionModelData))]
         public void QuestionModels_AreEqual(QuestionModel originalObj, QuestionModel objToCompare)
         {
+            //Act
             bool areSurveyEquals = originalObj.Equals(objToCompare);
 
+            //Assertion
             Assert.True(areSurveyEquals);
         }
 
         [Theory]
-        [MemberData(nameof(QuestionModelTestData.GetDifferentQuestions), MemberType = typeof(QuestionModelTestData))]
+        //Arrange
+        [MemberData(nameof(QuestionModelData.GetDifferentQuestions), MemberType = typeof(QuestionModelData))]
         public void QuestionModels_AreDifferent(QuestionModel originalObj, QuestionModel objToCompare)
         {
+            //Act
             bool areSurveyEquals = originalObj.Equals(objToCompare);
 
+            //Assertion
             Assert.False(areSurveyEquals);
         }
     }

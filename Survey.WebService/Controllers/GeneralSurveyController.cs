@@ -35,7 +35,7 @@ namespace Survey.WebService.Controllers
             try
             {
                 var surveyStatus = await _surveyService.UpdateOrCreate(Request.Survey);
-                var questionStatus = await _questionService.UpdateOrCreate(Request.Questions, Request.Survey);
+                var questionStatusList = await _questionService.UpdateOrCreate(Request.Questions, Request.Survey);
                 await _memberAnswerService.UpdateOrCreate(Request);
 
                 var response = new GeneralSurveyResponseDTO()
@@ -45,7 +45,7 @@ namespace Survey.WebService.Controllers
                     AdditionalMessage = new
                     {
                         SurveyStatus = surveyStatus.ToString(),
-                        QuestionStatus = questionStatus.ToString()
+                        QuestionStatusList = questionStatusList
                     }
                 };
 

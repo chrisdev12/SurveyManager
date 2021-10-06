@@ -21,10 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Mocks\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Survey.WebService.Models\Survey.WebService.Models.csproj" />
     <ProjectReference Include="..\Survey.WebService.Repository\Survey.WebService.Repository.csproj" />
     <ProjectReference Include="..\Survey.WebService.Services\Survey.WebService.Services.csproj" />

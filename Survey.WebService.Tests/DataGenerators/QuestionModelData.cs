@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Survey.WebService.Tests.UnitTest.DataGenerators
 {
-    public class QuestionModelTestData
+    public class QuestionModelData
     {
         public static IEnumerable<object[]> GetEqualQuestions()
         {
