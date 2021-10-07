@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Survey.WebService.DependencyInjector\Survey.WebService.DependencyInjector.csproj" />
     <ProjectReference Include="..\Survey.WebService.Models\Survey.WebService.Models.csproj" />
     <ProjectReference Include="..\Survey.WebService.Services\Survey.WebService.Services.csproj" />

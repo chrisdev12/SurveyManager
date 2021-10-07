@@ -1,22 +1,23 @@
 USE [IVR_Survey]
 GO
 
+--The schema ws may be created
 SET XACT_ABORT ON 
 BEGIN TRAN  
-	CREATE TABLE WS_Survey (
+	CREATE TABLE [ws].[Survey] (
 		Id VARCHAR(10) NOT NULL PRIMARY KEY,
 		Description VARCHAR(255) NOT NULL,
 	);
 
-	CREATE TABLE WS_QuestionSurvey (
+	CREATE TABLE [ws].[QuestionSurvey] (
 		Id VARCHAR(10) NOT NULL,
 		Description VARCHAR(255) NOT NULL,
 		SurveyId VARCHAR(10) NOT NULL,
 		PRIMARY KEY (Id,SurveyId),
-		FOREIGN KEY (SurveyId) REFERENCES WS_Survey(Id)
+		FOREIGN KEY (SurveyId) REFERENCES ws.Survey(Id)
 	);
 
-	CREATE TABLE WS_MemberSurveyResult (
+	CREATE TABLE [ws].[MemberSurveyResult] (
 		ContractNumber VARCHAR(20) NOT NULL,
 		Name VARCHAR(30),
 		LastName VARCHAR(30),
@@ -33,8 +34,7 @@ BEGIN TRAN
 		AnswerPhoneDigit VARCHAR(2) NOT NULL,
 		UpdatedDate DATETIME NOT NULL,
 		PRIMARY KEY(ContractNumber,QuestionId, SurveyId),
-		FOREIGN KEY (QuestionId, SurveyId) REFERENCES WS_QuestionSurvey(Id, SurveyId),
-		FOREIGN KEY (SurveyId) REFERENCES WS_Survey(Id)
+		FOREIGN KEY (QuestionId, SurveyId) REFERENCES ws.QuestionSurvey(Id, SurveyId),
+		FOREIGN KEY (SurveyId) REFERENCES ws.Survey(Id)
 	);
 COMMIT TRAN
-	
