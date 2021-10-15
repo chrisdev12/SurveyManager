@@ -1,10 +1,10 @@
 ﻿using Survey.WebService.Models;
-using Survey.WebService.Tests.UnitTest.DataGenerators;
+using Survey.WebService.UnitTests.DataGenerators;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Xunit;
 
-namespace Survey.WebService.Tests.UnitTest.Models
+namespace Survey.WebService.UnitTests.Models
 {
     public class SurveyModelTest
     {

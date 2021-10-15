@@ -17,7 +17,6 @@ namespace Survey.WebService
             Configuration = configuration;
         }
 
-        private readonly string defaultCorsPolicy = "defaultPolicy";
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -35,7 +34,7 @@ namespace Survey.WebService
         public void ConfigureCors(CorsOptions cors)
         {
             List<string> domainsAllowed = Configuration.GetSection("CorsAllowedDomains").Get<List<string>>();
-            cors.AddPolicy(defaultCorsPolicy, builder =>
+            cors.AddDefaultPolicy(builder =>
             {
                 domainsAllowed.ForEach(domain => builder.WithOrigins(domain).AllowAnyMethod().AllowAnyHeader());
             });
@@ -52,7 +51,7 @@ namespace Survey.WebService
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebServiceSurvey v1"));
             app.UseHttpsRedirection();
             app.UseRouting();
-            app.UseCors(defaultCorsPolicy);
+            app.UseCors();
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {

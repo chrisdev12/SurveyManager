@@ -7,7 +7,7 @@ namespace Survey.WebService.Controllers
     [Route("[controller]")]
     public class HealthCheckpointController : Controller
     {
-        private readonly string apiWorkingMessage = "Survey Webservice/API is working properly";
+        public static readonly string apiWorkingMessage = "Survey Webservice/API is working properly";
 
         [HttpGet]
         public ActionResult<ApiResponse<string>> Index()

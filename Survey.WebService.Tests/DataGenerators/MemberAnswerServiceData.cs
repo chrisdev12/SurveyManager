@@ -2,7 +2,7 @@
 using Survey.WebService.Models.DTOs;
 using System.Collections.Generic;
 
-namespace Survey.WebService.Tests.DataGenerators
+namespace Survey.WebService.UnitTests.DataGenerators
 {
     public class MemberAnswerServiceData
     {
