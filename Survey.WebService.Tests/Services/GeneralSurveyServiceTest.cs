@@ -5,7 +5,7 @@ using Survey.WebService.Services;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace Survey.WebService.Tests.UnitTest.Services
+namespace Survey.WebService.UnitTests.Services
 {
     public class GeneralSurveyServiceTest
     {

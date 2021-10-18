@@ -1,7 +1,7 @@
 ﻿using Survey.WebService.Models;
 using System.Collections.Generic;
 
-namespace Survey.WebService.Tests.UnitTest.DataGenerators
+namespace Survey.WebService.UnitTests.DataGenerators
 {
     public class QuestionModelData
     {

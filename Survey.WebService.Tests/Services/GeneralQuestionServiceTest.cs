@@ -2,13 +2,13 @@
 using Survey.WebService.Models;
 using Survey.WebService.Repository;
 using Survey.WebService.Services;
-using Survey.WebService.Tests.DataGenerators;
+using Survey.WebService.UnitTests.DataGenerators;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace Survey.WebService.Tests.UnitTest.Services
+namespace Survey.WebService.UnitTests.Services
 {
     public class GeneralQuestionServiceTest
     {
