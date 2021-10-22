@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using Survey.WebService.Filters;
 using Survey.WebService.Models.DTOs;
 using Survey.WebService.Responses;
 using Survey.WebService.Services;
@@ -31,12 +32,11 @@ namespace Survey.WebService.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<ApiResponse<GeneralSurveyResponseDTO>>> Register([FromQuery] string body)
+        public async Task<ActionResult<ApiResponse<GeneralSurveyResponseDTO>>> 
+            Register([FromJsonQueryIsRequiered(Name = "body")] GeneralSurveyRequestDTO Request)
         {
             try
             {
-                var Request = JsonConvert.DeserializeObject<GeneralSurveyRequestDTO>(body);
-                ValidateJsonModel(Request);
                 var surveyStatus = await _surveyService.UpdateOrCreate(Request.Survey);
                 var questionStatusList = await _questionService.UpdateOrCreate(Request.Questions, Request.Survey);
                 await _memberAnswerService.UpdateOrCreate(Request);
@@ -59,13 +59,6 @@ namespace Survey.WebService.Controllers
                 _logger.LogError(e.ToString());
                 return Problem(e.Message);
             }
-        }
-
-        private bool ValidateJsonModel(GeneralSurveyRequestDTO request)
-        {
-            var isRequestValid = TryValidateModel(request, nameof(GeneralSurveyRequestDTO));
-            if (isRequestValid) return true;
-            throw new ArgumentException("Not a valid model");
         }
     }
 }
