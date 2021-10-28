@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
 using Survey.WebService.Filters;
 using Survey.WebService.Models.DTOs;
 using Survey.WebService.Responses;

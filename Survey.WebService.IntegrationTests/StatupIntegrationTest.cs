@@ -7,9 +7,9 @@ using System.Reflection;
 
 namespace Survey.WebService.IntegrationTests
 {
-    public class StatupTest
+    public class StatupIntegrationTest
     {
-        public StatupTest(IConfiguration configuration)
+        public StatupIntegrationTest(IConfiguration configuration)
         {
             Configuration = configuration;
         }

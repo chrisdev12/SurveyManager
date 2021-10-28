@@ -15,7 +15,6 @@ namespace Microsoft.Extensions.DependencyInjecton
                 .AddScoped<IRepository<QuestionModel>, QuestionRepository>()
                 .AddScoped<IMemberRepository, MemberRepository>();
 
-
             return services;
         }
     }
