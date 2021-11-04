@@ -1,0 +1,7 @@
+USE [IVR_Survey]
+GO
+
+IF NOT EXISTS (SELECT * FROM sys.schemas WHERE name = 'ws')
+BEGIN
+	EXEC('CREATE SCHEMA ws')
+END

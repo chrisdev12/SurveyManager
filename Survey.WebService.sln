@@ -25,7 +25,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Survey.WebService.Services"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Survey.WebService.UnitTests", "Survey.WebService.Tests\Survey.WebService.UnitTests.csproj", "{ABF6EE11-4C79-42B2-BDE4-0F07131AF07B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Survey.WebService.IntegrationTests", "Survey.WebService.IntegrationTests\Survey.WebService.IntegrationTests.csproj", "{0E77C5B6-B573-4E1F-84B9-8FAB3864E06F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Survey.WebService.IntegrationTests", "Survey.WebService.IntegrationTests\Survey.WebService.IntegrationTests.csproj", "{0E77C5B6-B573-4E1F-84B9-8FAB3864E06F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
