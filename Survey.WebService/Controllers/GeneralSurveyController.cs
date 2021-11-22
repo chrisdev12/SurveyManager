@@ -32,7 +32,19 @@ namespace Survey.WebService.Controllers
 
         [HttpPost]
         public async Task<ActionResult<ApiResponse<GeneralSurveyResponseDTO>>> 
-            Register([FromJsonQueryIsRequiered(Name = "body")] GeneralSurveyRequestDTO Request)
+            Register([FromBody] GeneralSurveyRequestDTO Request)
+        {
+            return await SurveyRegister(Request);
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<ApiResponse<GeneralSurveyResponseDTO>>>
+            GetRegister([FromJsonQueryIsRequiered(Name = "body")] GeneralSurveyRequestDTO Request)
+        {
+            return await SurveyRegister(Request);
+        }
+
+        private async Task<ActionResult<ApiResponse<GeneralSurveyResponseDTO>>> SurveyRegister(GeneralSurveyRequestDTO Request)
         {
             try
             {
@@ -53,7 +65,7 @@ namespace Survey.WebService.Controllers
 
                 return Ok(new ApiResponse<GeneralSurveyResponseDTO> { Data = response });
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 _logger.LogError(e.ToString());
                 return Problem(e.Message);
